@@ -9,3 +9,9 @@ function pr($data){
     };
     echo '</pre>';
 };
+function _echo($data){
+    if(!empty($_POST[$data])){
+        return $_POST[$data];
+    }
+    return '';
+};
