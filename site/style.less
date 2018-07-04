@@ -1,0 +1,20 @@
+body {
+  background: #eee;
+}
+div {
+  box-sizing: border-box;
+  &:before, &:after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+}
+.footer{
+  &_copy, &_creator {
+    float: left;
+    width: 50%;
+  }
+  &_creator {
+    text-align: right;
+  }
+}
