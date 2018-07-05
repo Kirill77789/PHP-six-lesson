@@ -5,7 +5,6 @@ if(!empty($_GET['page'])){
 }else{
     $p='main';
 };
-echo $p.'.php';
 
 if(!file_exists($p.'.php')){
     $p = '404';
