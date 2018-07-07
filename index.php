@@ -8,7 +8,7 @@ require 'functions.php';
 pr($_POST);
 function prov($mail){//Функция проверки длинны E-mail
     if (strlen($mail)< 10){
-        global $mail;
+        global $mail;//global указывает на то что переменная глобальная
         $mail = 'E-mail короче 10 символов';
         echo $mail;
     };
