@@ -6,10 +6,17 @@ ini_set('error_reporting', E_ALL);*/
 
 require 'functions.php';
 pr($_POST);
+function prov($mail){//Функция проверки длинны E-mail
+    if (strlen($mail)< 10){
+        global $mail;
+        $mail = 'E-mail короче 10 символов';
+        echo $mail;
+    };
+};
 function esc($data)
 {
     if(is_string($data)) {
-        $data = trim($data);
+        $data = trim($data);//удаляет прообелы слева и справа от строки
         $data = stripcslashes($data);//stripslashes — Удаляет экранирование символов (удаляет управляющий слэш)
         $data = strip_tags($data);//strip_tags — Удаляет теги HTML и PHP из строки
         $data = htmlspecialchars($data);//htmlspecialchars — Преобразует специальные символы в HTML-сущности
@@ -26,6 +33,7 @@ if(empty($_POST['mail'])){
     $mail = esc($_POST['mail']);
     $mail = filter_var($mail, FILTER_VALIDATE_EMAIL);//filter_var — Фильтрует переменную с помощью определенного фильтра
 //FILTER_VALIDATE_EMAIL Проверяет, что значение является корректным e-mail.
+    prov($_POST['mail']);
     $dl = mb_strlen($FIO);//mb_strlen — Получает длину строки содержащей кириллические символы
     $subs = mb_substr($FIO, 0, 6);//mb_substr — Возвращает часть строки состоящей из кириллических символов
 ?>
@@ -34,7 +42,8 @@ if(empty($_POST['mail'])){
 <?php pr($mail); ?>
 <?php if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
     echo 'Не корректный E-mail';
-}; ?>
+};
+?>
 <?php /*pr ($dl); */?><!--
 --><?php /*pr ($subs); */?>
 <form action="" method="post">
