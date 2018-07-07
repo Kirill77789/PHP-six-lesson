@@ -1,15 +1,8 @@
 <?php
+require 'functions.php';//require - использцется для подключения файлов с функциями (НЕ HTML)
+//require, аналогично include, за исключением того, что при ошибке он также выдаст
+// фатальную ошибку уровня E_COMPILE_ERROR. Другими словами, он остановит выполнение скрипта, тогда как
+// include только выдал бы предупреждение E_WARNING, которое позволило бы скрипту продолжить выполнение.
+//Выражение include включает и выполняет указанный файл.
+init();
 
-if(!empty($_GET['page'])){
-    $p = $_GET['page'];
-}else{
-    $p='main';
-};
-
-if(!file_exists($p.'.php')){
-    $p = '404';
-};
-
-include 'header.php';
-include  $p.'.php';
-include 'footer.php';

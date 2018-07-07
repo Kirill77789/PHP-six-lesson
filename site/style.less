@@ -18,3 +18,31 @@ div {
     text-align: right;
   }
 }
+.menu {
+  &_list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &_item{
+    float: left;
+  }
+  &_link{
+    display: block;
+    text-align: center;
+    padding: 5px 10px;
+  }
+}
+.sidebar {
+  width: 30%;
+  float: left;
+}
+.content {
+  width: 100%;
+  float: none;
+  &.sidebar_exist{
+    width: 70%;
+    float: right;
+  }
+}
+

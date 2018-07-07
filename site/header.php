@@ -7,12 +7,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div class="menu">
-    <ul>
-        <li><a href="?page=main">Главная</a></li>
-        <li><a href="?page=about">О нас </a></li>
-        <li><a href="?page=contacts">Контакты</a></li>
-    </ul>
-</div>
-<div class="content">
+<?php echo menu( /*$data = array(
+        'main'=>array(
+            'caption'=> 'Главная',
+        ),
+        'about'=>array(
+            'caption'=> 'О нас',
+        ),
+        'contacts'=>array(
+            'caption'=> 'Контакты',
+        ),
+    )*/); ?>
+<div class="page">
+<div class="content <?php echo is_sidebar(); ?>">

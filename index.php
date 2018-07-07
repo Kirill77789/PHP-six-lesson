@@ -10,9 +10,9 @@ function esc($data)
 {
     if(is_string($data)) {
         $data = trim($data);
-        $data = stripcslashes($data);
-        $data = strip_tags($data);
-        $data = htmlspecialchars($data);
+        $data = stripcslashes($data);//stripslashes — Удаляет экранирование символов (удаляет управляющий слэш)
+        $data = strip_tags($data);//strip_tags — Удаляет теги HTML и PHP из строки
+        $data = htmlspecialchars($data);//htmlspecialchars — Преобразует специальные символы в HTML-сущности
     }
     return $data;
 };
@@ -24,9 +24,10 @@ if(empty($_POST['mail'])){
 };
     $FIO = esc($_POST['FIO']);
     $mail = esc($_POST['mail']);
-    $mail = filter_var($mail, FILTER_VALIDATE_EMAIL);
-    $dl = mb_strlen($FIO);
-    $subs = mb_substr($FIO, 0, 6);
+    $mail = filter_var($mail, FILTER_VALIDATE_EMAIL);//filter_var — Фильтрует переменную с помощью определенного фильтра
+//FILTER_VALIDATE_EMAIL Проверяет, что значение является корректным e-mail.
+    $dl = mb_strlen($FIO);//mb_strlen — Получает длину строки содержащей кириллические символы
+    $subs = mb_substr($FIO, 0, 6);//mb_substr — Возвращает часть строки состоящей из кириллических символов
 ?>
 
 <?php pr($FIO); ?>
