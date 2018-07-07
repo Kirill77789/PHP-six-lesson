@@ -7,7 +7,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<?php echo menu( /*$data = array(
+<?php  $data = array(
+    'main'=>'Главная',
+    'about'=>'О нас',
+    'contacts'=>'Контакты',
+)?>
+<?php echo menu( $data
+
+        /*$data = array(
         'main'=>array(
             'caption'=> 'Главная',
         ),
@@ -17,6 +24,8 @@
         'contacts'=>array(
             'caption'=> 'Контакты',
         ),
-    )*/); ?>
+    )*/
+   ); ?>
 <div class="page">
+    <h1><?php echo $data[$p] ?></h1>
 <div class="content <?php echo is_sidebar(); ?>">

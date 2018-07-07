@@ -3,11 +3,12 @@
 
 </div>
 </div>
-<?php echo menu( $data = array(
-    'contacts'=>array(
-        'caption'=> 'Контакты',
-    ),
-)); ?>
+<?php
+$data2 = array(
+    'caption'=> 'Контакты',
+)
+?>
+<?php echo menu( $data2); ?>
 <div class="footer">
     <div class="footer_copy">All rights reserved. &copy; 2018</div>
     <div class="footer_creator">
