@@ -5,7 +5,7 @@
 </div>
 <?php
 $data2 = array(
-    'caption'=> 'Контакты',
+    'contacts'=> 'Контакты',
 )
 ?>
 <?php echo menu( $data2); ?>
