@@ -11,6 +11,7 @@
     'main'=>'Главная',
     'about'=>'О нас',
     'contacts'=>'Контакты',
+    'scheme'=>'Схема (рисунок)',
 )?>
 <?php echo menu( $data
 
